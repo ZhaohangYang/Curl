@@ -1,0 +1,17 @@
+{
+    "name": "zhaohangyang/huoban_basic",
+    "authors": [
+        {
+            "name": "zhaohangyang",
+            "email": "zhaohangyang@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Huoban\\": "src/huoban/"
+        }
+    }
+}
