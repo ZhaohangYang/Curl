@@ -1,6 +1,6 @@
 <?php
 namespace huoban\models;
-use huoban\helpers\Curl_http;
+use huoban\helpers\CurlHttp;
 
 class HuobanStorage {
 
@@ -13,7 +13,7 @@ class HuobanStorage {
         $attributes = array(
             'key' => $key,
         );
-        return Curl_http::get("/storage", $attributes, $options);
+        return CurlHttp::get("/storage", $attributes, $options);
     }
 
     /**
@@ -26,6 +26,6 @@ class HuobanStorage {
             'key' => $key,
             'value' => $value,
         );
-        return Curl_http::post("/storage", $attributes, $options);
+        return CurlHttp::post("/storage", $attributes, $options);
     }
 }

@@ -2,7 +2,7 @@
 namespace huoban\models;
 
 use huoban\models\HuobanShare;
-use huoban\helpers\Curl_http;
+use huoban\helpers\CurlHttp;
 
 class HuobanTicket {
 
@@ -13,7 +13,7 @@ class HuobanTicket {
      * @return
      */
     public static function create($attributes = array()) {
-        return Curl_http::post("/ticket", $attributes);
+        return CurlHttp::post("/ticket", $attributes);
     }
     
     /**
@@ -22,7 +22,7 @@ class HuobanTicket {
     * @date         2016.12.13
     */
     public static function parse() {
-        return Curl_http::get('/ticket/parse');
+        return CurlHttp::get('/ticket/parse');
     }
     
     /**

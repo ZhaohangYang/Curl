@@ -2,44 +2,47 @@
 
 namespace huoban\models;
 
-use huoban\helpers\Curl_http;
-use yii;
+use huoban\helpers\CurlHttp;
+
 
 class HuobanApplication
 {
 
-    public static function get_ticket($expired = 1209600)
+
+    public static function getTicket($expired = 1209600)
     {
-        $currentTime = time();
-        $applicationId = Yii::$app->params['application']['applicationId'];
-        $ticketData   =  Yii::$app->request->cookies->getValue($applicationId.'_ticketData', null);
+        $current_time = time();
+        // $application_id = Yii::$app->params['application']['application_id'];
+        // $ticket_data   =  Yii::$app->request->cookies->getValue($application_id.'_ticket_data', null);
         
-        if ($ticketData) {
-            $ticketData = json_decode($ticketData, 1);
-            if (($currentTime - $ticketData['time']) < $expired) {
-                return $ticketData;
-            }
-        }
+        // if ($ticket_data) {
+        //     $ticket_data = json_decode($ticket_data, 1);
+        //     if (($current_time - $ticket_data['time']) < $expired) {
+        //         return $ticket_data;
+        //     }
+        // }
         $params = array(
-            'application_id'     => Yii::$app->params['application']['applicationId'],
-            'application_secret' => Yii::$app->params['application']['applicationSecret'],
+            'application_id'     => 1000307,
+            'application_secret' => 'GkCtOwFXsr1Sqsne6TNi0gMmwHZxKqTn9AzLyuEw',
             'expired'            => $expired,
         );
-        $ticketData         = Curl_http::post('/ticket', $params);
-        $ticketData['time'] = $currentTime;
 
-        $cookies = Yii::$app->response->cookies;
-        $cookies->add(new \yii\web\Cookie(array(
-            'name'  => 'ticketData',
-            'value' => json_encode($ticketData),
-        )));
-        return $ticketData;
+        $ticket_data         = CurlHttp::post('/ticket', $params);
+        $ticket_data['time'] = $current_time;
+
+        // $cookies = Yii::$app->response->cookies;
+        // $cookies->add(new \yii\web\Cookie(array(
+        //     'name'  => 'ticket_data',
+        //     'value' => json_encode($ticket_data),
+        // )));
+        // die('aaa');
+        return $ticket_data;
     }
 
-    public static function set_ticket($expired = 1209600)
+    public static function setTicket($expired = 1209600)
     {
-        $res = self::get_ticket($expired);
-        Curl_http::setup($res['ticket'], IS_TEST);
+        $res = self::getTicket($expired);
+        CurlHttp::setup($res['ticket'], IS_TEST);
         return $res['ticket'];
     }
 }

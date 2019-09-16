@@ -1,6 +1,6 @@
 <?php
 namespace huoban\models;
-use huoban\helpers\Curl_http;
+use huoban\helpers\CurlHttp;
 
 class HuobanStream {
 
@@ -11,8 +11,8 @@ class HuobanStream {
      *     'last_stream_id' => 11001,
      * );
      */
-    public static function get_for_item($item_id, $attributes = array()) {
-        return Curl_http::get("/streams/item/{$item_id}", $attributes);
+    public static function getForItem($item_id, $attributes = array()) {
+        return CurlHttp::get("/streams/item/{$item_id}", $attributes);
     }
 
 }

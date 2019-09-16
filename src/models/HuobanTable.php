@@ -2,7 +2,7 @@
 
 namespace huoban\models;
 
-use huoban\helpers\Curl_http;
+use huoban\helpers\CurlHttp;
 
 class HuobanTable
 {
@@ -16,13 +16,13 @@ class HuobanTable
      */
     public static function get($table_id, $options = array())
     {
-        return Curl_http::get("/table/{$table_id}", $options);
+        return CurlHttp::get("/table/{$table_id}", $options);
     }
 
     //更新表格
     public static function update($table_id, $attributes = array())
     {
-        return Curl_http::put("/table/{$table_id}", $attributes);
+        return CurlHttp::put("/table/{$table_id}", $attributes);
     }
 
     /**
@@ -33,7 +33,7 @@ class HuobanTable
      */
     public static function copy($table_id, $attributes = array())
     {
-        return Curl_http::post("/table/{$table_id}/copy", $attributes);
+        return CurlHttp::post("/table/{$table_id}/copy", $attributes);
     }
     /**
      * [setAlias 取别名]
@@ -43,7 +43,7 @@ class HuobanTable
      */
     public static function setAlias($table_id, $attributes = array())
     {
-        return Curl_http::post("/table/{$table_id}/alias", $attributes);
+        return CurlHttp::post("/table/{$table_id}/alias", $attributes);
     }
     /**
      * get
@@ -54,13 +54,13 @@ class HuobanTable
      */
     public static function getTables($space_id, $options = array())
     {
-        return Curl_http::get("/tables/space/{$space_id}", $options);
+        return CurlHttp::get("/tables/space/{$space_id}", $options);
     }
 
     //获取表格权限
     public static function getPermissions($table_id, $options = array())
     {
-        return Curl_http::get("/permissions/table/{$table_id}", $options);
+        return CurlHttp::get("/permissions/table/{$table_id}", $options);
     }
 
     /**
@@ -70,7 +70,7 @@ class HuobanTable
      * @param  integer $app_id
      * @return
      */
-    public static function get_alias_fields($table, $app_id)
+    public static function getAliasFields($table, $app_id)
     {
 
         $fields = array();

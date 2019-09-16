@@ -1,13 +1,13 @@
 <?php
 
 namespace huoban\models;
-use huoban\helpers\Curl_http;
+use huoban\helpers\CurlHttp;
 
 
 class HuobanShare {
 
     public static function get($ref_type,$ref_id, $attributes = array()) {
-        return Curl_http::post("/share/{$ref_type}/{$ref_id}", $attributes);
+        return CurlHttp::post("/share/{$ref_type}/{$ref_id}", $attributes);
     }
     
     public static function getShare($table_id, $is_new = false) {

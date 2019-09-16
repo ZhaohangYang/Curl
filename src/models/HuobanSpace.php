@@ -1,6 +1,6 @@
 <?php
 namespace huoban\models;
-use huoban\helpers\Curl_http;
+use huoban\helpers\CurlHttp;
 
 class HuobanSpace {
 
@@ -11,8 +11,8 @@ class HuobanSpace {
      * @param  array  $options
      * @return array
      */
-    public static function pay_info($space_id, $params = array(), $opts = array()) {
-        return Curl_http::get("/space/{$space_id}/pay_info", $params, $opts);
+    public static function payInfo($space_id, $params = array(), $opts = array()) {
+        return CurlHttp::get("/space/{$space_id}/pay_info", $params, $opts);
     }
     
     /**
@@ -22,17 +22,17 @@ class HuobanSpace {
      * @param  array  $options
      * @return array
      */
-    public static function payment_info($space_id, $params = array(), $opts = array()) {
-        return Curl_http::get("/space/{$space_id}/payment_info", $params, $opts);
+    public static function paymentInfo($space_id, $params = array(), $opts = array()) {
+        return CurlHttp::get("/space/{$space_id}/payment_info", $params, $opts);
     }
     
     //获取所有工作区
     public static function getJoined() {
-        return Curl_http::get('/spaces/joined');
+        return CurlHttp::get('/spaces/joined');
     }
     
     //获取工作区
     public static function get($space_id, $opts = array('pass_version' => true)) {
-        return Curl_http::get("/space/{$space_id}",$opts);
+        return CurlHttp::get("/space/{$space_id}",$opts);
     }
 }

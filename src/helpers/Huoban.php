@@ -1,8 +1,8 @@
 <?php
 namespace huoban\helpers;
 
-use huoban\helpers\Curl_http;
-use yii;
+use huoban\helpers\CurlHttp;
+
 
 class Huoban {
 
@@ -11,7 +11,7 @@ class Huoban {
 	
 	//初始化
 	public function __construct($ticket) {        
-		Curl_http::setup($ticket, IS_TEST);
+		CurlHttp::setup($ticket, IS_TEST);
 	}
 
 	public function setTicket($ticket) {

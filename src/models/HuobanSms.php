@@ -1,7 +1,7 @@
 <?php
 namespace huoban\models;
 
-use yii;
+
 use app\module\sms\TopClient;
 use app\module\sms\AlibabaAliqinFcSmsNumSendRequest;
 

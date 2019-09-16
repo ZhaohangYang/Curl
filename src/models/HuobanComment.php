@@ -1,20 +1,20 @@
 <?php
 
 namespace huoban\models;
-use huoban\helpers\Curl_http;
+use huoban\helpers\CurlHttp;
 
 
 class HuobanComment {
     
     public static function create($item_id, $attributes = array()) {
-        return Curl_http::post("/comment/item/{$item_id}", $attributes);
+        return CurlHttp::post("/comment/item/{$item_id}", $attributes);
     }
 
     public static function delete($comment_id) {
-        return Curl_http::delete("/comment/{$comment_id}");
+        return CurlHttp::delete("/comment/{$comment_id}");
     }
 
-    public static function get_all($item_id, $attributes = array()) {
-        return Curl_http::get("/comments/item/{$item_id}", $attributes);
+    public static function getAll($item_id, $attributes = array()) {
+        return CurlHttp::get("/comments/item/{$item_id}", $attributes);
     }
 }
