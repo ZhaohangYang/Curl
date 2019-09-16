@@ -11,7 +11,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Huoban\\": "src/huoban/"
+            "huoban\\models\\": "src/models/",
+            "huoban\\helpers\\": "src/helpers/"
         }
     }
 }

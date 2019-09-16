@@ -1,5 +1,6 @@
 <?php
-namespace Huoban;
+
+namespace huoban\models;
 
 class HuobanItem
 {

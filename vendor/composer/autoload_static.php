@@ -7,16 +7,21 @@ namespace Composer\Autoload;
 class ComposerStaticInit03e7e4f277aacacb664fba947f02e540
 {
     public static $prefixLengthsPsr4 = array (
-        'H' => 
+        'h' => 
         array (
-            'Huoban\\' => 7,
+            'huoban\\models\\' => 14,
+            'huoban\\helpers\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Huoban\\' => 
+        'huoban\\models\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/huoban',
+            0 => __DIR__ . '/../..' . '/src/models',
+        ),
+        'huoban\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/helpers',
         ),
     );
 
