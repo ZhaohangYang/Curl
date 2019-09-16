@@ -1,9 +1,9 @@
 {
-    "name": "zhaohangyang/huoban_basic",
+    "name": "zhaohangyang/huoban",
     "authors": [
         {
             "name": "zhaohangyang",
-            "email": "zhaohangyang@qq.com"
+            "email": "zhaohangyang@qq.com" 
         }
     ],
     "require": {
