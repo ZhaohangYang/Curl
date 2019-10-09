@@ -1,8 +1,8 @@
 <?php
 
-namespace huoban\helpers;
+namespace Huoban\Helpers;
 
-use huoban\models\HuobanItem;
+use Huoban\Models\HuobanItem;
 
 /**
  * [Tools.php]

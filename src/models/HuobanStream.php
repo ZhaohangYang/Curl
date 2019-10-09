@@ -1,6 +1,6 @@
 <?php
-namespace huoban\models;
-use huoban\helpers\CurlHttp;
+namespace Huoban\Models;
+use Huoban\Helpers\CurlHttp;
 
 class HuobanStream {
 

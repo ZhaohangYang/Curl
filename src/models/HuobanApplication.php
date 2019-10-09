@@ -1,48 +1,32 @@
 <?php
 
-namespace huoban\models;
+namespace Huoban\Models;
 
-use huoban\helpers\CurlHttp;
+use Huoban\Helpers\CurlHttp;
 
 
 class HuobanApplication
 {
-
-
-    public static function getTicket($expired = 1209600)
+    public static function getEnterpriseTicket($application_id, $application_secret, $expired = 1209600)
     {
-        $current_time = time();
-        // $application_id = Yii::$app->params['application']['application_id'];
-        // $ticket_data   =  Yii::$app->request->cookies->getValue($application_id.'_ticket_data', null);
-        
-        // if ($ticket_data) {
-        //     $ticket_data = json_decode($ticket_data, 1);
-        //     if (($current_time - $ticket_data['time']) < $expired) {
-        //         return $ticket_data;
-        //     }
-        // }
         $params = array(
-            'application_id'     => 1000307,
-            'application_secret' => 'GkCtOwFXsr1Sqsne6TNi0gMmwHZxKqTn9AzLyuEw',
+            'application_id'     => $application_id,
+            'application_secret' => $application_secret,
             'expired'            => $expired,
         );
 
         $ticket_data         = CurlHttp::post('/ticket', $params);
-        $ticket_data['time'] = $current_time;
-
-        // $cookies = Yii::$app->response->cookies;
-        // $cookies->add(new \yii\web\Cookie(array(
-        //     'name'  => 'ticket_data',
-        //     'value' => json_encode($ticket_data),
-        // )));
-        // die('aaa');
-        return $ticket_data;
+        return $ticket_data['ticket'];
     }
 
-    public static function setTicket($expired = 1209600)
+    public static function getTableTicket($expired = 1209600)
     {
-        $res = self::getTicket($expired);
-        CurlHttp::setup($res['ticket'], IS_TEST);
-        return $res['ticket'];
+        $ticket = $_GET['ticket'] ?  $_GET['ticket'] : $_COOKIE["ticket"];
+        setcookie("ticket", $ticket, $expired);
+    }
+
+    public static function setTicket($ticket)
+    {
+        CurlHttp::setup($ticket, IS_TEST);
     }
 }

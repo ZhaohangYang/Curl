@@ -1,8 +1,8 @@
 <?php
-namespace huoban\models;
+namespace Huoban\Models;
 
-use huoban\models\HuobanShare;
-use huoban\helpers\CurlHttp;
+use Huoban\Models\HuobanShare;
+use Huoban\Helpers\CurlHttp;
 
 class HuobanTicket {
 

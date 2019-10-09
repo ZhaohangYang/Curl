@@ -1,7 +1,7 @@
 <?php
-namespace huoban\helpers;
+namespace Huoban\Helpers;
 
-use huoban\helpers\CurlHttp;
+use Huoban\Helpers\CurlHttp;
 
 
 class Huoban {

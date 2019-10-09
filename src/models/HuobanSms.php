@@ -1,5 +1,5 @@
 <?php
-namespace huoban\models;
+namespace Huoban\Models;
 
 
 use app\module\sms\TopClient;

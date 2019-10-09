@@ -1,8 +1,8 @@
 <?php
 
-namespace huoban\helpers;
+namespace Huoban\Helpers;
 
-use huoban\helpers\Tools;
+use Huoban\Helpers\Tools;
 
 
 class CurlHttp

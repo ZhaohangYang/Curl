@@ -1,7 +1,7 @@
 <?php
-namespace huoban\models;
-use huoban\helpers\CurlHttp;
-use huoban\models\HuobanStorage;
+namespace Huoban\Models;
+use Huoban\Helpers\CurlHttp;
+use Huoban\Models\HuobanStorage;
 
 class HuobanWechat {
     

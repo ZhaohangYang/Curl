@@ -1,7 +1,7 @@
 <?php
-namespace huoban\models;
+namespace Huoban\Models;
 
-use huoban\helpers\CurlHttp;
+use Huoban\Helpers\CurlHttp;
 
 class HuobanUser
 {
