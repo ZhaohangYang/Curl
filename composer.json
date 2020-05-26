@@ -1,18 +1,15 @@
 {
-    "name": "zhaohangyang/huoban",
+    "name": "zhaohangyang/curl",
     "authors": [
         {
-            "name": "zhaohangyang",
-            "email": "zhaohangyang@qq.com" 
+            "name": "18730554250",
+            "email": "804142454@qq.com"
         }
     ],
-    "require": {
-        "php": ">=7.0"
-    },
+    "require": {},
     "autoload": {
         "psr-4": {
-            "Huoban\\Models\\": "src/models/",
-            "Huoban\\Helpers\\": "src/helpers/"
+            "Zhaohangyang\\Curl\\": "src/kit/"
         }
     }
 }

@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Huoban\\Models\\' => array($baseDir . '/src/models'),
-    'Huoban\\Helpers\\' => array($baseDir . '/src/helpers'),
+    'Zhaohangyang\\Curl\\' => array($baseDir . '/src/kit'),
 );
